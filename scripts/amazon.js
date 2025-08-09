@@ -1,4 +1,5 @@
-console.log('Hello, Amazon!');
+import {cart} from '../data/cart.js';
+ console.log('Hello, Amazon!');
 let Htmlbe =``;
 products.forEach((product)=>{
     Htmlbe += `
@@ -25,7 +26,7 @@ products.forEach((product)=>{
                 </div>
 
                 <div class="product-quantity-container">
-                    <select>
+                    <select class="js-quantity-selector-${product.id}">
                     <option selected value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -79,7 +80,5 @@ document.querySelectorAll('.js-add-to-cart')
         totalquantity += item.quantity;
     });
     document.querySelector('.cart-number').innerHTML = totalquantity;
-    console.log(cart);
-    console.log('Total quantity in cart:', totalquantity);
     });
 });
